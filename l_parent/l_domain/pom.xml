@@ -11,5 +11,12 @@
 
     <artifactId>l_domain</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.dd</groupId>
+            <artifactId>l_utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

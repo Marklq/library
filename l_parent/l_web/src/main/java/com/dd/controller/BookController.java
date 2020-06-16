@@ -27,7 +27,7 @@ public class BookController {
 
         mv.addObject("bookList", bookList);
 
-        mv.setViewName("../info");
+        mv.setViewName("../list");
         return mv;
     }
 

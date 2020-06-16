@@ -1,5 +1,9 @@
 package com.dd.domain;
 
+import com.dd.utils.BookUtils;
+import com.dd.utils.TimeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Date;
 
 public class Book {
@@ -9,11 +13,14 @@ public class Book {
     private String press;
 
     private Integer book_type;
+    private String book_typeStr;
     private Integer is_borrow;
+    private String is_borrowStr;
 
     private Double price;
 
     private Date publish_date;
+    private String publish_dateStr;
     //    private Date register_time;
 
 
@@ -29,6 +36,52 @@ public class Book {
                 ", price=" + price +
                 ", publish_date=" + publish_date +
                 '}';
+    }
+
+    /**
+     * 判断是否借出
+     *
+     * @return
+     */
+    public String getIs_borrowStr() {
+        if (is_borrow == 0) {
+            is_borrowStr = "已借出";
+        } else if (is_borrow > 0) {
+            is_borrowStr = "可借";
+        }
+
+        return is_borrowStr;
+    }
+
+    public void setIs_borrowStr(String is_borrowStr) {
+        this.is_borrowStr = is_borrowStr;
+    }
+
+    /**
+     * 判断书籍类别
+     *
+     * @return
+     */
+    public String getBook_typeStr() {
+        BookUtils bookUtils = new BookUtils();
+        book_typeStr = bookUtils.checkType(book_type);
+
+        return book_typeStr;
+    }
+
+    public void setBook_typeStr(String book_typeStr) {
+        this.book_typeStr = book_typeStr;
+    }
+
+    public String getPublish_dateStr() {
+        TimeUtils timeUtils = new TimeUtils();
+        publish_dateStr = timeUtils.DateToString(publish_date);
+
+        return publish_dateStr;
+    }
+
+    public void setPublish_dateStr(String publish_dateStr) {
+        this.publish_dateStr = publish_dateStr;
     }
 
     public String getBook_Id() {
