@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class TimeUtils {
 
-    private String pattern = "YY-MM-dd hh:mm";
+    private String pattern = "YY-MM-dd";
 
     public String DateToString(Date date) {
 

@@ -3,11 +3,12 @@ package com.dd.domain;
 import com.dd.utils.BookUtils;
 import com.dd.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 public class Book {
-    private String book_Id;
+    private String book_id;
     private String book_name;
     private String author;
     private String press;
@@ -19,22 +20,28 @@ public class Book {
 
     private Double price;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publish_date;
     private String publish_dateStr;
-    //    private Date register_time;
+    //注册时间
+    private Date register_time;
 
 
     @Override
     public String toString() {
         return "Book{" +
-                "book_Id='" + book_Id + '\'' +
+                "book_id='" + book_id + '\'' +
                 ", book_name='" + book_name + '\'' +
                 ", author='" + author + '\'' +
                 ", press='" + press + '\'' +
                 ", book_type=" + book_type +
+                ", book_typeStr='" + book_typeStr + '\'' +
                 ", is_borrow=" + is_borrow +
+                ", is_borrowStr='" + is_borrowStr + '\'' +
                 ", price=" + price +
                 ", publish_date=" + publish_date +
+                ", publish_dateStr='" + publish_dateStr + '\'' +
+                ", register_time=" + register_time +
                 '}';
     }
 
@@ -84,12 +91,12 @@ public class Book {
         this.publish_dateStr = publish_dateStr;
     }
 
-    public String getBook_Id() {
-        return book_Id;
+    public String getBook_id() {
+        return book_id;
     }
 
-    public void setBook_Id(String book_Id) {
-        this.book_Id = book_Id;
+    public void setBook_id(String book_id) {
+        this.book_id = book_id;
     }
 
     public String getBook_name() {
@@ -146,5 +153,13 @@ public class Book {
 
     public void setPublish_date(Date publish_date) {
         this.publish_date = publish_date;
+    }
+
+    public Date getRegister_time() {
+        return register_time;
+    }
+
+    public void setRegister_time(Date register_time) {
+        this.register_time = register_time;
     }
 }

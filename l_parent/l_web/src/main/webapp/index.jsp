@@ -71,7 +71,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切换语言：<a href="##">中文</a> &nbsp;&nbsp;<a href="##">英文</a></li>
 </ul>
 <div class="admin">
-    <iframe scrolling="auto" rameborder="0" src="pages/welcome.jsp"
+    <iframe scrolling="auto" rameborder="0" src="pages/common/welcome.jsp"
             name="right" width="100%" height="100%"></iframe>
 </div>
 

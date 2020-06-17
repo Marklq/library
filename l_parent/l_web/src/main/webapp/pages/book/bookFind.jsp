@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/admin.css">
     <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath }/js/pintuer.js"></script>
+
 </head>
 <body>
 <br>
@@ -41,27 +42,10 @@
                     </li>
                 </if>
                 <li>
-                    <input type="text" placeholder="请输入搜索关键字" name="keywords" class="input"
+                    <input type="text" onkeydown="Search()" placeholder="请输入书名" id="bookName" class="input border-gray"
                            style="width:250px; line-height:17px;display:inline-block"/>
-                    <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()"> 搜索</a>
-                </li>
-                <li>
-
-                    推荐
-                    <select name="s_isvouch" class="input" onchange="changesearch()"
-                            style="width:60px; line-height:17px;display:inline-block">
-                        <option value="">选择</option>
-                        <option value="1">是</option>
-                        <option value="0">否</option>
-                    </select>
-                    &nbsp;&nbsp;
-                    置顶
-                    <select name="s_istop" class="input" onchange="changesearch()"
-                            style="width:60px; line-height:17px;display:inline-block">
-                        <option value="">选择</option>
-                        <option value="1">是</option>
-                        <option value="0">否</option>
-                    </select>
+                    <a id="search" class="button border-main icon-search" onclick="submitSearch()"> 搜索</a>
+                    <%--<button class="bg-green-light button-group-justified">搜索</button>--%>
                 </li>
             </ul>
         </div>
@@ -85,9 +69,9 @@
     </tr>
     <div class="button-group">
         <!--  修改  -->
-        <c:forEach items="${bookList}" var="book">
+        <c:forEach items="${bookList}" var="b">
             <tr>
-                <td class="ID">${book.book_Id}</td>
+                <td class="ID">${b.book_Id}</td>
                 <td>${book.book_name}</td>
                 <td class="">${book.author }</td>
                 <td>${book.press}</td>
@@ -107,31 +91,72 @@
     </div>
 </table>
 
-
-<%--<!--数据列表-->
-<table id="dataList"
-       class="table table-bordered table-striped table-hover dataTable">
-    <thead>
-    <tr>
-        <th class="sorting_asc">ID</th>
-        <th class="sorting_desc">书名</th>
-        <th class="sorting_asc sorting_asc_disabled">作者</th>
-        <th class="sorting_desc sorting_desc_disabled">出版社</th>
-        <th class="sorting">出版日期</th>
-        <th class="text-center sorting">被借次数</th>
-        <th class="sorting">书籍类型</th>
-    </tr>
-    </thead>
-    <tbody>
-
-
-    </tbody>
-    <!--
-</table>
-<!--数据列表/-->
-
-</table>
-<!-- 数据表格 /-->--%>
-
 </body>
+
+<script language="JavaScript">
+
+    $(function () {
+
+
+        $("#search").click(function () {
+            //获取搜索框中的数据
+            var bookName = $("#bookName").val();
+            // window.alert(bookName);
+            window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName;
+
+        });
+
+        $("#bookName").bind("keypress", function () {
+            var keyCode = event.keyCode;
+            if (keyCode == 13) {
+                // alert(keyCode);
+                var bookName = $("#bookName").val();
+                // window.alert(bookName);
+                location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName;
+                <%--var str = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName;--%>
+                // alert(str);
+                // $("#bookName").val().clear();
+            }
+        });
+
+    });
+    /*    function Search() {
+            var keyCode = event.keyCode;
+            var bookName = $("#bookName").val();
+            if (keyCode == 13) {
+                if (bookName = "") {
+                    window.alert("请输入");
+                } else {
+                    window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName;
+            }
+        }
+    }
+
+    //提交搜索信息
+    function submit() {
+        var keyCode = event.keyCode;
+        var name = $("#productName").val();
+
+        if (keyCode == 13) {
+            // alert(name);
+            if (name == "") {
+                window.alert("请输入搜索信息");
+            } else {
+                window.location.href = "${pageContext.request.contextPath}/product/findProductByName.do?name=" + name + "&size=10";
+            }
+        }
+    }
+
+    function buttonSubmit() {
+        var name = $("#productName").val();
+        if (name == '') {
+            window.alert("请输入搜索信息");
+        } else {
+            window.location.href = "${pageContext.request.contextPath}/product/findProductByName.do?name=" + name + "&size=10";
+        }
+
+    }*/
+
+
+</script>
 </html>

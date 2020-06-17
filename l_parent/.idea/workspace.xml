@@ -6,18 +6,29 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd6e34b3-2751-4dff-8665-48ef2548cb80" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/BookUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/welcome.jsp" afterDir="false" />
+    <list default="true" id="bd6e34b3-2751-4dff-8665-48ef2548cb80" name="默认" comment="基本完善了图书类的crud功能">
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/bootstrap-datepicker/css/datepicker-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/bootstrap-datepicker/css/datepicker3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/bootstrap-datepicker/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/css/._bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap-datepicker.ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/modify.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/l_domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/l_domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/l_domain/src/main/java/com/dd/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_domain/src/main/java/com/dd/domain/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/l_parent.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/webapp/info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/webapp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/bookFind.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/pages/aside.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/pages/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l_web/src/main/webapp/pages/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/l_web/src/main/webapp/pages/common/welcome.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,35 +92,50 @@
     <session id="-165926692">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.0" value="9" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
-          <entry key="jsp" value="8" />
+          <entry key="css" value="2" />
+          <entry key="java" value="27" />
+          <entry key="js" value="9" />
+          <entry key="jsp" value="24" />
+          <entry key="properties" value="1" />
+          <entry key="ts" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
-          <entry key="JSP" value="8" />
+          <entry key="CSS" value="2" />
+          <entry key="JAVA" value="27" />
+          <entry key="JSP" value="24" />
+          <entry key="JavaScript" value="9" />
+          <entry key="Properties" value="1" />
+          <entry key="TypeScript" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="613" />
-          <entry key="jsp" value="345" />
+          <entry key="java" value="2125" />
+          <entry key="js" value="224" />
+          <entry key="jsp" value="1978" />
+          <entry key="txt" value="67" />
           <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="613" />
-          <entry key="JSP" value="345" />
+          <entry key="JAVA" value="2125" />
+          <entry key="JSP" value="1978" />
+          <entry key="JavaScript" value="224" />
+          <entry key="PLAIN_TEXT" value="67" />
           <entry key="XML" value="16" />
         </counts>
       </usages-collector>
@@ -118,112 +144,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/index.jsp">
+        <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#3136#3142#0#HTML" expanded="true" />
-                <element signature="e#3142#3148#0#HTML" expanded="true" />
-                <element signature="e#3148#3154#0#HTML" expanded="true" />
-                <element signature="e#3154#3160#0#HTML" expanded="true" />
-                <element signature="e#3160#3166#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/list.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-              <folding>
-                <element signature="n#form#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/l_domain/src/main/java/com/dd/domain/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
-                <element signature="e#1200#1201#0" expanded="true" />
-                <element signature="e#1439#1440#0" expanded="true" />
-                <element signature="e#1487#1488#0" expanded="true" />
-                <element signature="e#1995#1996#0" expanded="true" />
-                <element signature="e#2049#2050#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#1551#1552#0" expanded="true" />
-                <element signature="e#1597#1598#0" expanded="true" />
-                <element signature="e#1635#1636#0" expanded="true" />
-                <element signature="e#1671#1672#0" expanded="true" />
-                <element signature="e#1703#1704#0" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-                <element signature="e#1795#1796#0" expanded="true" />
-                <element signature="e#1828#1829#0" expanded="true" />
-                <element signature="e#1857#1858#0" expanded="true" />
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#1997#1998#0" expanded="true" />
-                <element signature="e#2039#2040#0" expanded="true" />
-                <element signature="e#2073#2074#0" expanded="true" />
-                <element signature="e#2110#2111#0" expanded="true" />
-                <element signature="e#2142#2143#0" expanded="true" />
-                <element signature="e#2193#2194#0" expanded="true" />
-                <element signature="e#2235#2236#0" expanded="true" />
-                <element signature="e#2272#2273#0" expanded="true" />
-                <element signature="e#2304#2305#0" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
-                <element signature="e#2397#2398#0" expanded="true" />
-                <element signature="e#2429#2430#0" expanded="true" />
-                <element signature="e#2457#2458#0" expanded="true" />
-                <element signature="e#2499#2500#0" expanded="true" />
-                <element signature="e#2533#2534#0" expanded="true" />
-                <element signature="e#2570#2571#0" expanded="true" />
-                <element signature="e#2605#2606#0" expanded="true" />
-                <element signature="e#2659#2660#0" expanded="true" />
-                <element signature="e#2707#2708#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/l_domain/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/BookUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="16">
+              <caret line="88" column="72" selection-start-line="88" selection-start-column="72" selection-end-line="88" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -231,11 +155,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state relative-caret-position="196">
+              <caret line="125" column="35" lean-forward="true" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+              <folding>
+                <element signature="e#1134#1135#0" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="27" column="65" lean-forward="true" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/bookFind.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="130" column="13" lean-forward="true" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -245,8 +214,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -265,24 +234,30 @@
         <option value="$PROJECT_DIR$/l_web/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/l_dao/pom.xml" />
-        <option value="$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java" />
         <option value="$PROJECT_DIR$/l_service/pom.xml" />
-        <option value="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java" />
         <option value="$PROJECT_DIR$/l_web/pom.xml" />
         <option value="$PROJECT_DIR$/l_web/src/main/resources/spring-security.xml" />
         <option value="$PROJECT_DIR$/l_web/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/info.jsp" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/WEB-INF/welcome.jsp" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/pages/welcome.jsp" />
         <option value="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/BookUtils.java" />
         <option value="$PROJECT_DIR$/l_domain/pom.xml" />
-        <option value="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/js/book.js" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/bookFind.jsp" />
         <option value="$PROJECT_DIR$/l_domain/src/main/java/com/dd/domain/Book.java" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/pages/add.jsp" />
         <option value="$PROJECT_DIR$/l_web/src/main/webapp/list.jsp" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/add.jsp" />
+        <option value="$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/modify.jsp" />
+        <option value="$PROJECT_DIR$/l_web/src/main/webapp/pages/book/list.jsp" />
+        <option value="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java" />
+        <option value="$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java" />
+        <option value="$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java" />
+        <option value="$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java" />
       </list>
     </option>
   </component>
@@ -350,249 +325,6 @@
             <path>
               <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dd" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_utils" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
               <item name="l_web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -646,40 +378,6 @@
               <item name="dd" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="l_parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="l_parent" type="462c0819:PsiDirectoryNode" />
-              <item name="l_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -690,8 +388,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592308838461" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592388845748" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../newproject" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="模块" />
@@ -700,18 +398,19 @@
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\pages\book" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\css" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\js\bootstrap" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\pages\book" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\pages\common" />
+      <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\js" />
       <recent name="C:\Users\dell\Desktop\gtirep\l_parent\l_web\src\main\webapp\pages" />
       <recent name="C:\Users\dell\Desktop\l_parent\l_domain\src\main\java" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_domain\src\main" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_domain\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dell\Desktop\l_parent\l_web\src\main\java\com\dd\controller" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_dao\src\main\java\com\dd\dao" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_domain\src\main\java\com\dd\domain" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_service\src\main\java\com\dd\service" />
-      <recent name="C:\Users\dell\Desktop\l_parent\l_web\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -853,17 +552,38 @@
       <workItem from="1592292942887" duration="1021000" />
       <workItem from="1592294037048" duration="288000" />
       <workItem from="1592294361060" duration="812000" />
-      <workItem from="1592296990878" duration="7583000" />
+      <workItem from="1592296990878" duration="8783000" />
+      <workItem from="1592310828260" duration="17000" />
+      <workItem from="1592356665368" duration="3916000" />
+      <workItem from="1592360685497" duration="298000" />
+      <workItem from="1592361057846" duration="1323000" />
+      <workItem from="1592362418343" duration="3732000" />
+      <workItem from="1592366278434" duration="4438000" />
+      <workItem from="1592373062478" duration="67000" />
+      <workItem from="1592373158985" duration="3874000" />
+      <workItem from="1592377156408" duration="2798000" />
+      <workItem from="1592380008853" duration="4728000" />
+      <workItem from="1592384819050" duration="123000" />
+      <workItem from="1592384965172" duration="291000" />
+      <workItem from="1592385403640" duration="3437000" />
     </task>
+    <task id="LOCAL-00001" summary="更新了jsp页面，添加了两个工具类">
+      <created>1592308903909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592308903909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9704000" />
+    <option name="totallyTimeSpent" value="39946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26545843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -872,19 +592,19 @@
       <window_info id="设计器" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4636265" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.53963083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="调试" order="14" />
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -901,8 +621,49 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新了jsp页面，添加了两个工具类" />
+    <MESSAGE value="基本完善了图书类的crud功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完善了图书类的crud功能" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/l_utils/pom.xml">
@@ -928,27 +689,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/l_service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,24 +703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/l_web/src/main/resources/spring-security.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1001,38 +731,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/header.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/aside.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/welcome.jsp">
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/header.jsp" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/aside.jsp" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/common/welcome.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="60" column="35" lean-forward="true" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3136#3142#0#HTML" expanded="true" />
-            <element signature="e#3142#3148#0#HTML" expanded="true" />
-            <element signature="e#3148#3154#0#HTML" expanded="true" />
-            <element signature="e#3154#3160#0#HTML" expanded="true" />
-            <element signature="e#3160#3166#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,90 +747,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/BookUtils.java">
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="1" column="18049" selection-start-line="1" selection-start-column="18049" selection-end-line="1" selection-end-column="18049" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="6230" column="4" selection-start-line="6230" selection-start-column="4" selection-end-line="6230" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap.min.js" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap-datepicker.ar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap/js/locales/bootstrap-datetimepicker.ar.js" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/book.js" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/js/bootstrap/css/bootstrap-datetimepicker.css" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/css/._bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/bootstrap-datepicker/js/bootstrap-datepicker.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/info.jsp" />
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4068">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/TimeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/l_domain/src/main/java/com/dd/domain/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="794">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_utils/src/main/java/com/dd/utils/BookUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/modify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="129" column="42" lean-forward="true" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/IBookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1439#1440#0" expanded="true" />
-            <element signature="e#1487#1488#0" expanded="true" />
-            <element signature="e#1995#1996#0" expanded="true" />
-            <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1671#1672#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1753#1754#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1828#1829#0" expanded="true" />
-            <element signature="e#1857#1858#0" expanded="true" />
-            <element signature="e#1901#1902#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#1997#1998#0" expanded="true" />
-            <element signature="e#2039#2040#0" expanded="true" />
-            <element signature="e#2073#2074#0" expanded="true" />
-            <element signature="e#2110#2111#0" expanded="true" />
-            <element signature="e#2142#2143#0" expanded="true" />
-            <element signature="e#2193#2194#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-            <element signature="e#2272#2273#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2355#2356#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2429#2430#0" expanded="true" />
-            <element signature="e#2457#2458#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-            <element signature="e#2570#2571#0" expanded="true" />
-            <element signature="e#2605#2606#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2707#2708#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/list.jsp">
+    <entry file="file://$PROJECT_DIR$/l_service/src/main/java/com/dd/service/impl/IBookServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+        <state relative-caret-position="547">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding>
-            <element signature="n#form#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#table#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="88" column="72" selection-start-line="88" selection-start-column="72" selection-end-line="88" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/java/com/dd/controller/BookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="125" column="35" lean-forward="true" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_dao/src/main/java/com/dd/dao/IBookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="27" column="65" lean-forward="true" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l_web/src/main/webapp/pages/book/bookFind.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="130" column="13" lean-forward="true" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
         </state>
       </provider>
     </entry>
