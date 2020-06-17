@@ -1,30 +1,57 @@
 package com.dd.domain;
 
+import com.dd.utils.TimeUtils;
+
 import java.util.Date;
 
 public class Master {
-    private String sysid;
-    private String account;// 账户
+    private String sys_id;
+    private String username;// 账户
     private String password;//密码
-    private String name;// 姓名
+    private String truename;// 姓名
     private String sex;
-    private Date entry_time;
+    private String phoneNumber;
+    private Date reg_time;
+    private String reg_timeStr;
 
 
-    public String getSysid() {
-        return sysid;
+    public String getReg_timeStr() {
+        TimeUtils timeUtils = new TimeUtils();
+        reg_timeStr = timeUtils.DateToString(reg_time);
+        return reg_timeStr;
     }
 
-    public void setSysid(String sysid) {
-        this.sysid = sysid;
+    public void setReg_timeStr(String reg_timeStr) {
+        this.reg_timeStr = reg_timeStr;
     }
 
-    public String getAccount() {
-        return account;
+    @Override
+    public String toString() {
+        return "Master{" +
+                "sys_id='" + sys_id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", truename='" + truename + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", entry_time=" + reg_time +
+                '}';
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public String getSys_id() {
+        return sys_id;
+    }
+
+    public void setSys_id(String sys_id) {
+        this.sys_id = sys_id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -35,12 +62,12 @@ public class Master {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getTruename() {
+        return truename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTruename(String truename) {
+        this.truename = truename;
     }
 
     public String getSex() {
@@ -51,23 +78,21 @@ public class Master {
         this.sex = sex;
     }
 
-    public Date getEntry_time() {
-        return entry_time;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setEntry_time(Date entry_time) {
-        this.entry_time = entry_time;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Master{" +
-                "sysid='" + sysid + '\'' +
-                ", account='" + account + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
-                ", entry_time=" + entry_time +
-                '}';
+    public Date getReg_time() {
+        return reg_time;
     }
+
+    public void setReg_time(Date entry_time) {
+        this.reg_time = entry_time;
+    }
+
+
 }

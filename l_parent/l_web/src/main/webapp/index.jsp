@@ -27,24 +27,33 @@
 </div>
 <div class="leftnav">
     <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
-    <h2><span class="icon-user"></span>图书管理</h2>
+    <h2><span class="icon-user"></span>书籍管理</h2>
     <ul style="display:block">
-        <li><a href="${pageContext.request.contextPath}/book/findAll.do" target="right"><span
-                class="icon-caret-right"></span>图书信息</a></li>
-        <li><a href="pass.html" target="right"><span class="icon-caret-right"></span>预期未还</a></li>
-        <li><a href="adv.html" target="right"><span class="icon-caret-right"></span>借阅排行</a></li>
+        <li>
+            <a href="${pageContext.request.contextPath}/book/findAll.do" target="right">
+                <span class="icon-caret-right"></span>书籍信息
+            </a>
+        </li>
+        <li>
+            <a href="${pageContext.request.contextPath}/./pages/book/add.jsp" target="right">
+                <span class="icon-caret-right"></span>添加书籍
+            </a>
+        </li>
+        <li>
+            <a href="${pageContext.request.contextPath}/book/borrowTimes.do" target="right">
+                <span class="icon-caret-right"></span>借阅排行
+            </a>
+        </li>
+        <li><a href="adv.html" target="right"><span class="icon-caret-right"></span>预期未还</a></li>
         <li><a href="book.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
-        <li><a href="column.html" target="right"><span class="icon-caret-right"></span>栏目管理</a></li>
     </ul>
     <h2><span class="icon-pencil-square-o"></span>用户管理</h2>
     <ul>
-        <li><a href="add.html" target="right"><span class="icon-caret-right"></span>添加管理</a></li>
-        <li><a href="list.html" target="right"><span class="icon-caret-right"></span>添加用户</a></li>
-        <li><a href="cate.html" target="right"><span class="icon-caret-right"></span>分类管理</a></li>
-    </ul>
-    <h2><span class="icon-pencil-square-o"></span>用户管理</h2>
-    <ul>
-        <li><a href="add.html" target="right"><span class="icon-caret-right"></span>添加管理</a></li>
+        <li>
+            <a href="${pageContext.request.contextPath}/master/findAll.do" target="right">
+                <span class="icon-caret-right"></span>超级管理员
+            </a>
+        </li>
         <li><a href="list.html" target="right"><span class="icon-caret-right"></span>添加用户</a></li>
         <li><a href="cate.html" target="right"><span class="icon-caret-right"></span>分类管理</a></li>
     </ul>

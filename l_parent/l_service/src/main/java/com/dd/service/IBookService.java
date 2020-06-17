@@ -18,4 +18,8 @@ public interface IBookService {
     void modify(Book book);
 
     void deleteBook(String bookId);
+
+    List<Book> findByType(Integer book_type, Integer page, Integer size);
+
+    List<Book> findAll2(Integer page, Integer size);
 }

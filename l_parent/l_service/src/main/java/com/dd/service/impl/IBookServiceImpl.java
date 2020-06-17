@@ -53,4 +53,16 @@ public class IBookServiceImpl implements IBookService {
     public void deleteBook(String bookId) {
         bookDao.deleteBook(bookId);
     }
+
+    @Override
+    public List<Book> findByType(Integer book_type, Integer page, Integer size) {
+        PageHelper.startPage(page, size);
+        return bookDao.findByType(book_type);
+    }
+
+    @Override
+    public List<Book> findAll2(Integer page, Integer size) {
+        PageHelper.startPage(page, size);
+        return bookDao.findAll2();
+    }
 }

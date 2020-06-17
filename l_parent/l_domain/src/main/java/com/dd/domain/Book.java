@@ -26,6 +26,9 @@ public class Book {
     //注册时间
     private Date register_time;
 
+    private Integer borrow_times;
+    private String book_Num;
+
 
     @Override
     public String toString() {
@@ -42,6 +45,8 @@ public class Book {
                 ", publish_date=" + publish_date +
                 ", publish_dateStr='" + publish_dateStr + '\'' +
                 ", register_time=" + register_time +
+                ", borrow_times=" + borrow_times +
+                ", book_Num='" + book_Num + '\'' +
                 '}';
     }
 
@@ -85,6 +90,22 @@ public class Book {
         publish_dateStr = timeUtils.DateToString(publish_date);
 
         return publish_dateStr;
+    }
+
+    public Integer getBorrow_times() {
+        return borrow_times;
+    }
+
+    public void setBorrow_times(Integer borrow_times) {
+        this.borrow_times = borrow_times;
+    }
+
+    public String getBook_Num() {
+        return book_Num;
+    }
+
+    public void setBook_Num(String book_Num) {
+        this.book_Num = book_Num;
     }
 
     public void setPublish_dateStr(String publish_dateStr) {

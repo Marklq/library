@@ -16,6 +16,13 @@
 
 </head>
 <body>
+<%
+    String queryString = request.getQueryString();
+
+    String head = queryString.substring(0, queryString.indexOf("&"));
+
+%>
+
 <br>
 
 <!--  显示列表 -->
@@ -86,11 +93,11 @@
                 <td class='<c:if test="${book.is_borrow==0}"> alert-red</c:if>'>${book.is_borrowStr}</td>
                 <td>${book.book_typeStr}</td>
                 <td class="text-center">
-                    <a class="button border-main bounce-hover "
+                    <a class="button border-main bounce-hover"
                        href="${pageContext.request.contextPath}/book/modifyBook.do?bookId=${book.book_id}">
                         <span class="icon-edit"></span> 修改
                     </a>
-                    <a class="button border-red margin-large-left bounce-hover"
+                    <a class="button border-red bounce-hover"
                        href="${pageContext.request.contextPath}/book/deleteBook.do?bookId=${book.book_id}">
                         <span class="icon-trash-o"></span> 删除
                     </a>
@@ -118,10 +125,10 @@
     <div class="box-tools float-right margin-big">
         <ul class="pagination">
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled bg-inverse" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=1&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=1&size=${pageInfo.pageSize}"
                    aria-label="Previous">首页</a></li>
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
+                <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
             </li>
 
             <c:choose>
@@ -135,7 +142,7 @@
                             <%--显示当前选中的页数--%>
                                 <c:if test="${pageInfo.pageNum == pageNum}">class="active" </c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
@@ -150,16 +157,16 @@
                             <%--显示当前选中的页数--%>
                                 <c:if test="${pageInfo.pageNum == pageNum}">class="bg-blue" s</c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
             </c:choose>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
+                <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
             </li>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/book/findByName.do?bookName=<%=head%>&page=${pageInfo.pages}&size=${pageInfo.pageSize}"
                    aria-label="Next">尾页</a></li>
         </ul>
     </div>

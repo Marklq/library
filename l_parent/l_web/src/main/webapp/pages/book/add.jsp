@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/._bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/bootstrap-datepicker/css/datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath }/bootstrap-datepicker/css/datepicker-theme.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/._bootstrap.min.css">
     <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath }/js/pintuer.js"></script>
     <script src="${pageContext.request.contextPath }/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
@@ -18,6 +17,16 @@
     <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加图书</strong></div>
     <div class="body-content">
         <form method="post" class="form-x" action="${pageContext.request.contextPath }/book/addBook.do">
+
+            <div class="form-group">
+                <div class="label">
+                    <label class="text-big text-center text-justify">借阅次数：</label>
+                </div>
+                <div class="field">
+                    <input type="text" title="借阅次数不可更改" class="input w50" name="borrow_times" value="0"
+                           readonly="readonly"/>
+                </div>
+            </div>
 
             <div class="form-group">
                 <div class="label">
@@ -66,8 +75,8 @@
                     <label class="text-big text-center text-justify">书籍编号: &nbsp; </label>
                 </div>
                 <div class="field">
-                    <input placeholder="例：jsj-001" type="text" class="input w50" value="" name="book_id"
-                           data-validate="required:请输入编号"/>
+                    <input placeholder="例：jsj-001" type="text" class="input w50" value="" name="book_Num"
+                           data-validate="required:请输入书籍编号"/>
                     <div class="tips"></div>
                 </div>
             </div>

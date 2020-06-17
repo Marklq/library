@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/book")
@@ -65,7 +66,7 @@ public class BookController {
         }
 //        mv.addObject("bookList", bookList);
         mv.addObject("pageInfo", pageInfo);
-        mv.setViewName("book/list");
+        mv.setViewName("book/listByName");
         return mv;
     }
 
@@ -74,6 +75,10 @@ public class BookController {
      */
     @RequestMapping("/addBook.do")
     public String addBook(Book book) {
+        //添加UUID书籍编号
+        String book_id = UUID.randomUUID().toString();
+        book.setBook_id(book_id);
+        //添加书籍注册时间
         Date date = new Date();
         book.setRegister_time(date);
         System.out.println(book);
@@ -119,7 +124,7 @@ public class BookController {
 
 
     /**
-     * 根据书籍注册时间修改书籍数据
+     * 删除书籍
      */
     @RequestMapping("/deleteBook.do")
     public String deleteBook(@RequestParam(name = "bookId", required = true) String bookId) {
@@ -131,6 +136,42 @@ public class BookController {
         return "redirect:findAll.do";
     }
 
+    /**
+     * 分类查找书籍
+     */
+    @RequestMapping("/findByType.do")
+    public ModelAndView findByType(@RequestParam(name = "Type", required = true) Integer book_type,
+                                   @RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                   @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
 
+        ModelAndView mv = new ModelAndView();
+
+        List<Book> books = bookService.findByType(book_type, page, size);
+
+        PageInfo<Book> pageInfo = new PageInfo<>(books);
+
+        mv.addObject("pageInfo", pageInfo);
+
+        mv.setViewName("book/listByType");
+        return mv;
+    }
+
+
+    /**
+     * 按照借出的书籍数量进行排序
+     */
+    @RequestMapping("/borrowTimes.do")
+    public ModelAndView listByBorrowTimes(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                          @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+
+        ModelAndView mv = new ModelAndView();
+
+        List<Book> bookList = bookService.findAll2(page, size);
+        PageInfo<Book> pageInfo = new PageInfo<>(bookList);
+
+        mv.addObject("pageInfo", pageInfo);
+        mv.setViewName("book/listByBorrowTimes");
+        return mv;
+    }
 
 }
