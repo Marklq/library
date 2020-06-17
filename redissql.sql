@@ -66,14 +66,17 @@ CREATE TABLE `j2ee_books` (
   `press` varchar(50) NOT NULL COMMENT '出版社',
   `publish_date` date NOT NULL COMMENT '出版日期',
   `price` double NOT NULL COMMENT '价格',
-  `register_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '登记日期',
-  `is_borrow` int(1) NOT NULL DEFAULT '4' COMMENT '是否可借（大于0可借）',
-  PRIMARY KEY (`book_id`)
+  `register_time` date NOT NULL COMMENT '登记日期',
+  `is_borrow` int(4) NOT NULL COMMENT '是否可借（大于0可借）',
+  `borrow_times` int(9) NOT NULL DEFAULT '0' COMMENT '借出次数',
+  `book_Num` varchar(20) DEFAULT NULL COMMENT '书籍编号',
+  PRIMARY KEY (`book_id`),
+  UNIQUE KEY `book_id` (`book_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `j2ee_books` */
 
-insert  into `j2ee_books`(`book_id`,`book_name`,`book_type`,`author`,`press`,`publish_date`,`price`,`register_time`,`is_borrow`) values ('00a116d1-4e9e-4c8c-b81e-b5e212d25ebf','javaweb',1,'梅恩3','华清出版','2020-05-01',50,'2020-06-11 00:00:00',100),('5ab2beb2-242a-47a9-8df0-a37d7d039629','故事会',2,'梅恩2','华清出版','2020-05-01',10,'2020-06-10 00:00:00',20),('9a81b430-adf8-477b-a67f-dfe1e8b41d81','故事会',0,'梅恩','华清出版','2020-05-01',10,'2020-06-10 00:00:00',0),('f7c30390-d059-4d3f-bcea-c863f69d2c3e','javaweb',3,'梅恩3','华清出版','2020-05-01',50,'2020-06-10 00:00:00',50),('ME_3535','计算机组成原理',5,'肖西川','十教出版社','2015-11-10',88.88,'2017-12-07 20:47:48',1),('ME_5353','大学物理',4,'廖欢','成大出版社','2017-11-11',88.66,'2017-12-07 21:03:39',5),('TQ_2323','计算机网络',2,'梅恩','成大出版社','2017-12-07',44.22,'2017-12-07 20:44:54',6);
+insert  into `j2ee_books`(`book_id`,`book_name`,`book_type`,`author`,`press`,`publish_date`,`price`,`register_time`,`is_borrow`,`borrow_times`,`book_Num`) values ('19a0d2c8-b685-4508-976a-35f59ef5a77a','啥也不是',3,'dd','成理工程出版社','2020-06-23',12,'2020-06-17',20,0,'jsj-321'),('jsj-001','啥也不是，啥也不行',0,'佚名','成理工程出版社','0020-06-01',12,'2020-06-17',20,56,'jsj-007'),('jsj-004','javaweb',0,'华仔','成理工程出版社','2020-05-01',50,'2020-06-10',50,12,'jsj-008'),('jsj-0123','javaweb',0,'华仔','成理工程出版社','0020-05-01',20,'2020-06-11',10,100,'jsj-010'),('jsj-454','故事会',2,'华仔','成理工程出版社','0020-05-01',10,'2020-06-10',0,23,'jsj-009'),('jsj-c-002','C语言',0,'佚名','成理工程出版社','2020-06-01',200,'2020-06-17',20,34,'jsj-011'),('ME_3535','计算机组成原理',0,'佚名','成理工程出版社','2015-11-10',88.88,'2017-12-07',1,33,'jsj-004'),('ME_5353','大学物理',1,'佚名','成理工程出版社','2017-11-11',88.66,'2017-12-07',5,6,'jsj-005'),('rw-001','论程序员的自我修养',3,'东方不败','成理工程出版社','2020-06-08',40,'2020-06-17',30,2,'jsj-001'),('sh-001','adw',0,'东方不败','成理工程出版社','2020-06-16',13,'2020-06-19',20,8,'jsj-002'),('sh-666','唐老鸭与他的富婆们',2,'唐老鸭','成理工程','2020-06-03',666,'2020-06-17',0,222,'jsj-003'),('TQ_2323','计算机网络',1,'唐老鸭','成理工程出版社','2017-12-07',44.22,'2017-12-07',6,45,'jsj-006');
 
 /*Table structure for table `j2ee_borrow` */
 
@@ -99,18 +102,20 @@ insert  into `j2ee_borrow`(`borrow_id`,`book_id`,`borrow_time`,`should_r_time`,`
 DROP TABLE IF EXISTS `j2ee_master`;
 
 CREATE TABLE `j2ee_master` (
-  `sys_id` char(6) NOT NULL,
-  `account` varchar(15) NOT NULL,
+  `id` varchar(255) NOT NULL COMMENT 'UUID',
+  `username` varchar(15) NOT NULL,
   `password` varchar(18) NOT NULL,
-  `name` varchar(15) NOT NULL,
-  `sex` char(1) NOT NULL,
-  `entry_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`sys_id`)
+  `truename` varchar(15) NOT NULL,
+  `sex` varchar(1) NOT NULL,
+  `reg_time` date NOT NULL COMMENT '注册时间',
+  `phoneNumber` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `j2ee_master` */
 
-insert  into `j2ee_master`(`sys_id`,`account`,`password`,`name`,`sex`,`entry_time`) values ('103616','dd','123','梅恩','男','2017-12-01 16:32:35');
+insert  into `j2ee_master`(`id`,`username`,`password`,`truename`,`sex`,`reg_time`,`phoneNumber`) values ('103616','admin','admin','admin','男','2017-12-01','12233332222');
 
 /*Table structure for table `j2ee_reader` */
 
