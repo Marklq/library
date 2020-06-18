@@ -31,7 +31,7 @@
         <div class="panel-head">
             <strong class="icon-reorder"> 内容列表</strong>
             <strong>
-                <a style="cursor: pointer" class="float-right text-center text"
+                <a class="float-right text-center text"
                    onclick="history.back(-1);">返回</a>
             </strong>
         </div>
@@ -91,7 +91,9 @@
 <div class="box-footer border-bottom border-blue">
     <div class="float-left margin-big">
         <div class=" text-big">
-            总共<b class="text-red">${pageInfo.pages}</b>页，共<b class="text-red">${pageInfo.total}</b> 条数据。
+            总共<b class="text-red">${pageInfo.pages}</b>页，
+            每页展示<b class="text-red">${pageInfo.pageSize}</b>条数据，
+            共<b class="text-red">${pageInfo.total}</b> 条数据。
         </div>
     </div>
 
@@ -179,34 +181,6 @@
         );
 
     });
-
-    /*
-
-    //提交搜索信息
-    function submit() {
-        var keyCode = event.keyCode;
-        var name = $("#productName").val();
-
-        if (keyCode == 13) {
-            // alert(name);
-            if (name == "") {
-                window.alert("请输入搜索信息");
-            } else {
-                window.location.href = "/product/findProductByName.do?name=" + name + "&size=10";
-            }
-        }
-    }*/
-
-    function changeBookType() {
-        var type = $("#type").val();
-        // alert(val);
-        if (type == "") {
-            window.alert("请选择");
-        } else {
-            // alert("来了");
-            window.location.href = "${pageContext.request.contextPath }/book/findByType.do?Type=" + type + "&page=1&size=10";
-        }
-    }
 
 </script>
 </html>

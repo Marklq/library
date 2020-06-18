@@ -29,9 +29,10 @@ public class BookController {
      */
     @RequestMapping("/findAll.do")
     public ModelAndView findAll(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
-                                @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+                                @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
 
         ModelAndView mv = new ModelAndView();
+//        mv.setViewName("forward:common/loading");
 
         List<Book> bookList = bookService.findAll(page, size);
 
@@ -52,7 +53,7 @@ public class BookController {
     @RequestMapping("/findByName.do")
     public ModelAndView findByName(@RequestParam(name = "bookName", required = true) String bookName,
                                    @RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
-                                   @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+                                   @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
         System.out.println(bookName);
         ModelAndView mv = new ModelAndView();
 
@@ -142,7 +143,7 @@ public class BookController {
     @RequestMapping("/findByType.do")
     public ModelAndView findByType(@RequestParam(name = "Type", required = true) Integer book_type,
                                    @RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
-                                   @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+                                   @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
 
         ModelAndView mv = new ModelAndView();
 
@@ -162,7 +163,7 @@ public class BookController {
      */
     @RequestMapping("/borrowTimes.do")
     public ModelAndView listByBorrowTimes(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
-                                          @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+                                          @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
 
         ModelAndView mv = new ModelAndView();
 

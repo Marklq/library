@@ -31,6 +31,10 @@
     <div class="panel admin-panel">
         <div class="panel-head">
             <strong class="icon-reorder"> 内容列表</strong>
+            <strong>
+                <a class="float-right text-center text"
+                   onclick="history.back(-1);">返回</a>
+            </strong>
         </div>
         <div class="padding border-bottom">
             <ul class="search" style="padding-left:10px;">
@@ -48,8 +52,8 @@
                                 style="width:100px; line-height:20px;">
                             <option value="">请选择分类</option>
                             <option value="0">计算机类</option>
-                            <option value="1">小说类</option>
-                            <option value="2">社科类</option>
+                            <option value="1">社科类</option>
+                            <option value="2">小说类</option>
                             <option value="3">人文类</option>
                         </select>
                     </li>
@@ -76,7 +80,7 @@
         <th>出版社</th>
         <th>价格</th>
         <th width="10%">出版时间</th>
-        <th width="10%">是否出借</th>
+        <th width="10%">是否可借</th>
         <th>图书类型</th>
         <th width="310">操作</th>
     </tr>
@@ -97,8 +101,7 @@
                        href="${pageContext.request.contextPath}/book/modifyBook.do?bookId=${book.book_id}">
                         <span class="icon-edit"></span> 修改
                     </a>
-                    <a class="button border-red bounce-hover"
-                       href="${pageContext.request.contextPath}/book/deleteBook.do?bookId=${book.book_id}">
+                    <a class="button border-red bounce-hover" onclick="deleteConfirm('${book.book_id}')">
                         <span class="icon-trash-o"></span> 删除
                     </a>
                 </td>
@@ -118,7 +121,9 @@
 <div class="box-footer border-bottom border-blue">
     <div class="float-left margin-big">
         <div class=" text-big">
-            总共<b class="text-red">${pageInfo.pages}</b>页，共<b class="text-red">${pageInfo.total}</b> 条数据。
+            总共<b class="text-red">${pageInfo.pages}</b>页，
+            每页展示<b class="text-red">${pageInfo.pageSize}</b>条数据，
+            共<b class="text-red">${pageInfo.total}</b> 条数据。
         </div>
     </div>
 
@@ -205,8 +210,18 @@
             }
         );
 
+
     });
 
+    // 删除二次确认
+    function deleteConfirm(id) {
+        if (confirm("确认删除吗？")) {
+            window.location.href = "${pageContext.request.contextPath}/book/deleteBook.do?bookId=" + id;
+            window.location.reload();
+            window.alert("删除成功！");
+        } else {
+        }
+    }
     /*
 
     //提交搜索信息

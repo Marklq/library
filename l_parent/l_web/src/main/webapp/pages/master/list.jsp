@@ -23,11 +23,15 @@
     <div class="panel admin-panel">
         <div class="panel-head">
             <strong class="icon-reorder">超级管理信息</strong>
+            <strong>
+                <a class="float-right text-center text"
+                   onclick="history.back(-1);">返回</a>
+            </strong>
         </div>
         <div class="padding border-bottom">
             <ul class="search" style="padding-left:10px;">
                 <li><a class="button border-main ring-hover"
-                       href="${pageContext.request.contextPath}/master/findAll.do">所有管理员</a>
+                       href="${pageContext.request.contextPath}/manager/findAll.do">所有管理员</a>
                 </li>
             </ul>
         </div>
@@ -57,7 +61,8 @@
                 <td>${admin.phoneNumber}</td>
                 <td>${admin.reg_timeStr}</td>
                 <td class="text-center">
-                    <a style="cursor: pointer" class="button border-red margin-large-left shake-hover" onclick="check()">
+                    <a style="cursor: pointer" class="button border-red margin-large-left shake-hover"
+                       onclick="check()">
                         <span class="icon-trash-o"></span> 删除
                     </a>
                 </td>

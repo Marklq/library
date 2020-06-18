@@ -16,7 +16,15 @@
 </head>
 <body>
 <div class="panel admin-panel">
-    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加图书</strong></div>
+    <div class="panel-head" id="add">
+        <strong>
+            <span class="icon-pencil-square-o"></span>增加图书
+        </strong>
+        <strong>
+            <a class="float-right text-center text"
+               onclick="history.back(-1);">返回</a>
+        </strong>
+    </div>
     <div class="body-content">
         <form method="post" class="form-x"
               action="${pageContext.request.contextPath }/book/modify.do">
@@ -109,10 +117,18 @@
                     </div>
                     <div class="field">
                         <select class="form-control select2 input w50" name="book_type">
-                            <option value="0" <c:if test="${book.book_type==0}">selected="selected"</c:if>">计算机类</option>
-                            <option value="1" <c:if test="${book.book_type==1}">selected="selected"</c:if>">社科类</option>
-                            <option value="2" <c:if test="${book.book_type==2}">selected="selected"</c:if>">小说类</option>
-                            <option value="3" <c:if test="${book.book_type==3}">selected="selected"</c:if>">人文类</option>
+                            <option value="0"
+                                    <c:if test="${book.book_type==0}">selected="selected"
+                            </c:if>">计算机类</option>
+                            <option value="1"
+                                    <c:if test="${book.book_type==1}">selected="selected"
+                            </c:if>">社科类</option>
+                            <option value="2"
+                                    <c:if test="${book.book_type==2}">selected="selected"
+                            </c:if>">小说类</option>
+                            <option value="3"
+                                    <c:if test="${book.book_type==3}">selected="selected"
+                            </c:if>">人文类</option>
                         </select>
                         <div class="tips"></div>
                     </div>
@@ -138,9 +154,6 @@
                     <label></label>
                 </div>
                 <div class="field">
-                    <%--                    <input class="button button-big bg-blue-light icon-check-square-o" value="修改书籍" type="submit"/>
-                                        <input class="button button-big bg-blue-light icon-check-square-o" onclick="history.back(-1);" value="返回"/>--%>
-
                     <button type="submit" class="margin-large border radius-big button-big bg-green text-white">
                         修改
                     </button>

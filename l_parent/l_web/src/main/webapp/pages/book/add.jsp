@@ -11,10 +11,22 @@
     <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
     <script src="${pageContext.request.contextPath }/js/pintuer.js"></script>
     <script src="${pageContext.request.contextPath }/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <style type="text/css">
+        a {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <div class="panel admin-panel">
-    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加图书</strong></div>
+    <div class="panel-head" id="add">
+        <strong><span class="icon-pencil-square-o"></span>增加图书</strong>
+        <strong>
+            <a class="float-right text-center text"
+               onclick="history.back(-1);">返回</a>
+        </strong>
+    </div>
+
     <div class="body-content">
         <form method="post" class="form-x" action="${pageContext.request.contextPath }/book/addBook.do">
 
