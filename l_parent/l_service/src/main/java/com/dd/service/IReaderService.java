@@ -10,4 +10,10 @@ public interface IReaderService {
     void addReader(Reader reader);
 
     void deleteReader(String id);
+
+    List<Reader> findByName(String trueName, Integer page, Integer size);
+
+    Reader findById(String id);
+
+    void modifyReader(Reader reader);
 }

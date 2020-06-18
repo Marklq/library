@@ -40,7 +40,7 @@ public class ReaderController {
         PageInfo<Reader> pageInfo = new PageInfo<>(readers);
 
         mv.addObject("pageInfo", pageInfo);
-        mv.setViewName("reader/readerList");
+        mv.setViewName("reader/readersList");
         return mv;
     }
 
@@ -82,8 +82,61 @@ public class ReaderController {
         return "redirect:findAll.do";
     }
 
+    /**
+     * 跳转到修改页
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping("/modifyPage")
+    public ModelAndView modifyPage(@RequestParam(name = "id", required = true) String id) {
+        ModelAndView mv = new ModelAndView();
+
+        Reader reader = readerService.findById(id);
+
+        mv.addObject("reader", reader);
+        mv.setViewName("reader/modifyReader");
+
+        return mv;
+    }
 
 
+    /**
+     * 模糊查询读者
+     *
+     * @return
+     */
+    @RequestMapping("/findByName.do")
+    public ModelAndView findByName(@RequestParam(name = "trueName", required = true) String trueName,
+                                   @RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                   @RequestParam(name = "size", required = true, defaultValue = "10") Integer size) {
+        ModelAndView mv = new ModelAndView();
+
+        List<Reader> readers = readerService.findByName(trueName, page, size);
+
+        PageInfo<Reader> pageInfo = new PageInfo<>(readers);
+
+        mv.addObject("pageInfo", pageInfo);
+        mv.setViewName("reader/readersList");
+        return mv;
+    }
+
+    /**
+     * 修改读者信息
+     *
+     * @param reader
+     * @return
+     */
+    @RequestMapping("/modifyReader.do")
+    public String modifyReader(Reader reader) {
+        System.out.println(reader);
+        try {
+            readerService.modifyReader(reader);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:findAll.do";
+    }
 
 
 

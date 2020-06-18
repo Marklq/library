@@ -63,8 +63,16 @@
                 <span class="icon-caret-right"></span>借阅排行
             </a>
         </li>
-        <li><a onclick="loading()" href="adv.html" target="right"><span class="icon-caret-right"></span>预期未还</a></li>
-        <li><a href="book.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
+        <li>
+            <a onclick="loading()" href="${pageContext.request.contextPath}/book/findAllRecords.do" target="right">
+                <span class="icon-caret-right"></span>借书记录
+            </a>
+        </li>
+        <li>
+            <a onclick="loading()" href="${pageContext.request.contextPath}/book/findNot_R_Records.do" target="right">
+                <span class="icon-caret-right"></span>逾期未还
+            </a>
+        </li>
     </ul>
     <h2><span class="icon-user"></span> 用 户 管 理</h2>
     <ul>
@@ -94,6 +102,32 @@
         <li>
             <a href="pages/reader/addReader.jsp" target="right">
                 <span class="icon-caret-right"></span>添加读者
+            </a>
+        </li>
+    </ul>
+    <h2><span class="icon-users"></span>赔 偿 管 理</h2>
+    <ul>
+        <li>
+            <a href="${pageContext.request.contextPath}/amerce/findAll.do" target="right">
+                <span class="icon-caret-right"></span>赔偿记录
+            </a>
+        </li>
+        <li>
+            <a href="pages/amerce/addReader.jsp" target="right">
+                <span class="icon-caret-right"></span>添加记录
+            </a>
+        </li>
+    </ul>
+    <h2><span class="icon-users"></span>留 言 管 理</h2>
+    <ul>
+        <li>
+            <a href="${pageContext.request.contextPath}/message/findAll.do" target="right">
+                <span class="icon-caret-right"></span>留言记录
+            </a>
+        </li>
+        <li>
+            <a href="pages/amerce/addReader.jsp" target="right">
+                <span class="icon-caret-right"></span>添加记录
             </a>
         </li>
     </ul>

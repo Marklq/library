@@ -75,13 +75,13 @@
                 <td>${manager.sexStr}</td>
                 <td>${manager.reg_timeStr}</td>
                 <td class="text-center">
-                    <a class="button border-main bounce-hover "
+                    <a class="button border-main "
                        href="${pageContext.request.contextPath}/manager/modifyPage.do?id=${manager.id}">
                         <span class="icon-edit"></span>修改
                     </a>
                     <a class="button border-red margin-large-left"
-                        <%--href="${pageContext.request.contextPath}/manager/deleteManager.do?id=${manager.id}">--%>
-                       onclick="deleteManagerConfirm('${manager.id}')">
+                       href="${pageContext.request.contextPath}/manager/deleteManager.do?id=${manager.id}">
+                            <%--onclick="deleteManagerConfirm('${manager.id}')">--%>
                         <span class="icon-trash-o"></span>删除
                     </a>
                 </td>
@@ -108,22 +108,6 @@
             window.alert("请输入信息");
         } else {
             window.location.href = "${pageContext.request.contextPath }/manager/findByName.do?username=" + username + "&page=1&size=10";
-        }
-    });
-
-
-    // 键盘事件目前无法跳转，不知道具体原因
-    $("#bookName").bind("keypress", function () {
-        var keyCode = event.keyCode;
-        var bookName = $("#bookName").val();
-        if (keyCode == 13) {
-            // window.alert(bookName);
-            if (bookName == "") {
-                window.alert("请输入搜索信息");
-            } else {
-                window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName + "&page=1&size=10";
-            }
-
         }
     });
 

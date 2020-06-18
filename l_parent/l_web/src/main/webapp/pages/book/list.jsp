@@ -95,11 +95,11 @@
                 <td class='<c:if test="${book.is_borrow==0}"> alert-red</c:if>'>${book.is_borrowStr}</td>
                 <td>${book.book_typeStr}</td>
                 <td class="text-center">
-                    <a class="button border-main bounce-hover "
+                    <a class="button border-main  "
                        href="${pageContext.request.contextPath}/book/modifyBook.do?bookId=${book.book_id}">
                         <span class="icon-edit"></span> 修改
                     </a>
-                    <a class="button border-red margin-large-left bounce-hover"
+                    <a class="button border-red margin-large-left "
                        onclick="deleteConfirm('${book.book_id}')">
                         <span class="icon-trash-o"></span> 删除
                     </a>

@@ -2,7 +2,9 @@ package com.dd.controller;
 
 
 import com.dd.domain.Book;
+import com.dd.domain.Records;
 import com.dd.service.IBookService;
+import com.dd.service.IRecordsService;
 import com.dd.utils.TimeUtils;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class BookController {
 
     @Autowired
     private IBookService bookService;
+
+    @Autowired
+    private IRecordsService recordsService;
 
     /**
      * 查询所有
@@ -172,6 +177,50 @@ public class BookController {
 
         mv.addObject("pageInfo", pageInfo);
         mv.setViewName("book/listByBorrowTimes");
+        return mv;
+    }
+
+    /**
+     * 查询所有记录
+     *
+     * @return
+     */
+    @RequestMapping("/findAllRecords.do")
+    public ModelAndView findAllRecords(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                       @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
+
+        ModelAndView mv = new ModelAndView();
+
+        List<Records> records = recordsService.findAllRecords(page, size);
+
+        PageInfo<Records> pageInfo = new PageInfo<>(records);
+
+        mv.addObject("pageInfo", pageInfo);
+
+        mv.setViewName("book/borrowList");
+        return mv;
+    }
+
+
+
+    /**
+     * 查询未还书记录
+     *
+     * @return
+     */
+    @RequestMapping("/findNot_R_Records.do")
+    public ModelAndView findNot_R_Records(@RequestParam(name = "page", required = true, defaultValue = "1") Integer page,
+                                       @RequestParam(name = "size", required = true, defaultValue = "8") Integer size) {
+
+        ModelAndView mv = new ModelAndView();
+
+        List<Records> records = recordsService.findNot_R_Records(page, size);
+
+        PageInfo<Records> pageInfo = new PageInfo<>(records);
+
+        mv.addObject("pageInfo", pageInfo);
+
+        mv.setViewName("book/notReturnList");
         return mv;
     }
 

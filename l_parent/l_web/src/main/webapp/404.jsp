@@ -30,6 +30,10 @@
                     <br>
                     <p class="text-dot">
                         没有找到你请求的页面, 你可以
+                            <a style="cursor:pointer;" class="text-center text"
+                               onclick="history.back(-1);">返回
+                            </a>
+                        <br>
                         <a href="${pageContext.request.contextPath}/index.jsp" target="_parent">
                             返回到后台首页
                         </a>
