@@ -128,9 +128,9 @@
     });
 
     // 删除二次确认
-    function deleteManagerConfirm(id) {
+    function deleteManagerConfirm(managerId) {
         if (window.confirm("确认删除吗？")) {
-            window.location.href = "${pageContext.request.contextPath}/manager/deleteManager.do?id=" + id;
+            window.location.href = "${pageContext.request.contextPath}/manager/deleteManager.do?id=" + managerId;
             window.location.reload();
             window.alert("删除成功！");
         }

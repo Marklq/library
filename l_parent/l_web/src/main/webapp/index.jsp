@@ -87,12 +87,12 @@
     <h2><span class="icon-users"></span>读 者 管 理</h2>
     <ul>
         <li>
-            <a href="${pageContext.request.contextPath}/manager/findAll.do" target="right">
+            <a href="${pageContext.request.contextPath}/reader/findAll.do" target="right">
                 <span class="icon-caret-right"></span>读者信息
             </a>
         </li>
         <li>
-            <a href="pages/master/addManager.jsp" target="right">
+            <a href="pages/reader/addReader.jsp" target="right">
                 <span class="icon-caret-right"></span>添加读者
             </a>
         </li>
