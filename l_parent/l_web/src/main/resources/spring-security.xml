@@ -9,7 +9,7 @@
     http://www.springframework.org/schema/security/spring-security.xsd">
 
     <!-- 配置不拦截的资源 -->
-    <security:http pattern="/pages/login.jsp" security="none"/>
+    <security:http pattern="/login.jsp" security="none"/>
     <security:http pattern="/failer.jsp" security="none"/>
     <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/images/**" security="none"/>
@@ -27,7 +27,7 @@
         <!--5、登录成功后的跳转路径 -->
         <!--6、登录成功后,没有权限的跳转路径 -->
         <security:form-login
-                login-page="/pages/login.jsp"
+                login-page="/login.jsp"
                 login-processing-url="/login.do"
                 default-target-url="/index.jsp"
                 authentication-failure-url="/failer.jsp"
@@ -44,7 +44,7 @@
         </sercurity:headers>
 
         <!-- 退出 -->
-        <security:logout invalidate-session="true" logout-url="/logout.do" logout-success-url="/pages/login.jsp"/>
+        <security:logout invalidate-session="true" logout-url="/logout.do" logout-success-url="/login.jsp"/>
 
     </security:http>
 
