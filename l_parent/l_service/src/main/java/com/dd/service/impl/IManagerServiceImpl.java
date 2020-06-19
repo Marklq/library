@@ -51,4 +51,14 @@ public class IManagerServiceImpl implements IManagerService {
     public void deleteManager(String id) {
         managerDao.deleteManager(id);
     }
+
+    @Override
+    public void addForeignKey(String id) {
+        managerDao.addForeignKey(id);
+    }
+
+    @Override
+    public void deleteForeignKey(String id) {
+        managerDao.deleteForeignKey(id);
+    }
 }

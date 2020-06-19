@@ -23,14 +23,14 @@
 
 
                 <div class="text-black text-black">
-                    <h3>Oops! 页面请求出错了.</h3>
+                    <h3>Oops! 页面<b class="text-red">请求</b>出错了.</h3>
                     <br>
                     <br>
                     <br>
                     <br>
                     <p class="text-dot">
                         没有响应你的请求, 你可以
-                        <a href="${pageContext.request.contextPath}/index.jsp" target="_parent">
+                        <a href="${pageContext.request.contextPath}/pages/index.jsp" target="_parent">
                             返回到后台首页
                         </a>
                     </p>

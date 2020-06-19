@@ -34,7 +34,7 @@
                                onclick="history.back(-1);">返回
                             </a>
                         <br>
-                        <a href="${pageContext.request.contextPath}/index.jsp" target="_parent">
+                        <a href="${pageContext.request.contextPath}/pages/index.jsp" target="_parent">
                             返回到后台首页
                         </a>
                     </p>

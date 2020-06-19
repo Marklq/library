@@ -3,6 +3,7 @@ package com.dd.domain;
 import com.dd.utils.TimeUtils;
 
 import java.util.Date;
+import java.util.List;
 
 public class Manager {
 
@@ -15,6 +16,16 @@ public class Manager {
     private Date reg_time;
 
     private String reg_timeStr;
+
+    private List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
     public String getSexStr() {
 

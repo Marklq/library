@@ -77,9 +77,14 @@ public class ManagerController {
         //添加书籍注册时间
         Date date = new Date();
         manager.setReg_time(date);
+
+
         System.out.println(manager);
         try {
             managerService.addManager(manager);
+            //添加外键
+            //外键需要在主表中有主键后添加
+            managerService.addForeignKey(id);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -134,6 +139,8 @@ public class ManagerController {
         System.out.println(id);
 
         try {
+            //删除主键之前先删除外键
+            managerService.deleteForeignKey(id);
             managerService.deleteManager(id);
         } catch (Exception e) {
             e.printStackTrace();

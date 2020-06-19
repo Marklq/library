@@ -16,4 +16,8 @@ public interface IManagerService {
     void modifyManager(Manager manager);
 
     void deleteManager(String id);
+
+    void addForeignKey(String id);
+
+    void deleteForeignKey(String id);
 }
