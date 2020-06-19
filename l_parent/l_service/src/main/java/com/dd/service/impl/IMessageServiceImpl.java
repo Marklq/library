@@ -23,6 +23,22 @@ public class IMessageServiceImpl implements IMessageService {
     public List<Message> findAll(Integer page, Integer size) {
 
         PageHelper.startPage(page,size);
-        return messageDao.findAll(page,size);
+        return messageDao.findAll();
+    }
+
+    @Override
+    public List<Message> findByS_id(String student_id, Integer page, Integer size) {
+        PageHelper.startPage(page,size);
+        return messageDao.findByS_id(student_id);
+    }
+
+    @Override
+    public void deleteMessage(String id) {
+        messageDao.deleteMessage(id);
+    }
+
+    @Override
+    public void addMessage(Message message) {
+        messageDao.addMessage(message);
     }
 }

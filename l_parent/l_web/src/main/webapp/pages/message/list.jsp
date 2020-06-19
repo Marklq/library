@@ -40,13 +40,13 @@
                        href="${pageContext.request.contextPath}/message/findAll.do">所有留言</a>
                 </li>
                 <li>
-                    <a class="button border-main icon-plus-square-o ring-hover">新增</a>
+                    <a class="button border-main icon-plus-square-o ring-hover"
+                       href="${pageContext.request.contextPath}/pages/message/addMessage.jsp">新增</a>
                 </li>
                 <li class="float-right">
-                    <input type="text" onkeydown="Search()" placeholder="请输入学号" id="bookName" class="input border-gray"
+                    <input type="text" placeholder="请输入学号" id="student_id" class="input border-gray"
                            style="width:250px; line-height:17px;display:inline-block"/>
-                    <a id="search" class="button border-main icon-search ring-hover" onclick="submitSearch()"> 搜索</a>
-                    <%--<button class="bg-green-light button-group-justified">搜索</button>--%>
+                    <a id="search" class="button border-main icon-search ring-hover"> 搜索</a>
                 </li>
             </ul>
         </div>
@@ -85,7 +85,7 @@
                         <span class="icon-edit"></span> 修改
                     </a>
                     <a class="button border-red margin-large-left "
-                       onclick="deleteConfirm('${amerce.amerce_id}')">
+                       onclick="deleteConfirm('${message.id}')">
                         <span class="icon-trash-o"></span> 删除
                     </a>
                 </td>
@@ -114,10 +114,10 @@
     <div class="box-tools float-right margin-big">
         <ul class="pagination">
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled bg-inverse" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=1&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/message/findAll.do?page=1&size=${pageInfo.pageSize}"
                    aria-label="Previous">首页</a></li>
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
+                <a href="${pageContext.request.contextPath}/message/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
             </li>
 
             <c:choose>
@@ -131,7 +131,7 @@
                             <%--显示当前选中的页数--%>
                                 <c:if test="${pageInfo.pageNum == pageNum}">class="active" </c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/message/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
@@ -146,16 +146,16 @@
                             <%--显示当前选中的页数--%>
                                 <c:if test="${pageInfo.pageNum == pageNum}">class="bg-blue" s</c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/message/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
             </c:choose>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
+                <a href="${pageContext.request.contextPath}/message/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
             </li>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/book/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/message/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
                    aria-label="Next">尾页</a></li>
         </ul>
     </div>
@@ -168,48 +168,22 @@
     $(function () {
         $("#search").click(function () {
             //获取搜索框中的数据
-            var bookName = $("#bookName").val();
-            if (bookName == "") {
+            var student_id = $("#student_id").val();
+            if (student_id == "") {
                 window.alert("请输入搜索信息");
             } else {// window.alert(bookName);
-                window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName + "&page=1&size=10";
-            }
-        });
-
-        // 键盘事件目前无法跳转，不知道具体原因
-        $("#bookName").bind("keypress", function () {
-            var keyCode = event.keyCode;
-            var bookName = $("#bookName").val();
-            if (keyCode == 13) {
-                // window.alert(bookName);
-                if (bookName == "") {
-                    window.alert("请输入搜索信息");
-                } else {
-                    window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + bookName + "&page=1&size=10";
-                }
-
+                window.location.href = "${pageContext.request.contextPath }/message/findByS_id.do?id=" + student_id + "&page=1&size=10";
             }
         });
     });
 
     // 删除二次确认
-    function deleteConfirm(bookId) {
+    function deleteConfirm(id) {
         if (confirm("确认删除吗？")) {
             // alert(bookId);
-            window.location.href = "${pageContext.request.contextPath}/book/deleteBook.do?bookId=" + bookId;
+            window.location.href = "${pageContext.request.contextPath}/message/deleteMessage.do?id=" + id;
             window.reload();
             window.alert("删除成功");
-        }
-    }
-
-    function changeBookType() {
-        var type = $("#type").val();
-        // alert(val);
-        if (type == "") {
-            window.alert("请选择");
-        } else {
-            // alert("来了");
-            window.location.href = "${pageContext.request.contextPath }/book/findByType.do?Type=" + type + "&page=1&size=10";
         }
     }
 

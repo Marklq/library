@@ -21,6 +21,12 @@
     </style>
 </head>
 <body>
+<%
+    String queryString = request.getQueryString();
+
+    String head = queryString.substring(0, queryString.indexOf("&"));
+
+%>
 <br>
 
 <!--  显示列表 -->
@@ -28,7 +34,7 @@
 <form id="listform">
     <div class="panel admin-panel">
         <div class="panel-head">
-            <strong class="icon-reorder"> 罚单记录</strong>
+            <strong class="icon-reorder"> 留言管理</strong>
             <strong>
                 <a class="float-right text-center text"
                    onclick="history.back(-1);">返回</a>
@@ -37,17 +43,16 @@
         <div class="padding border-bottom">
             <ul class="search" style="padding-left:10px;">
                 <li><a class="button border-main ring-hover"
-                       href="${pageContext.request.contextPath}/amerce/findAll.do">所有记录</a>
+                       href="${pageContext.request.contextPath}/message/findAll.do">所有留言</a>
                 </li>
                 <li>
                     <a class="button border-main icon-plus-square-o ring-hover"
-                       href="${pageContext.request.contextPath}/pages/amerce/addAmerce.jsp">新增</a>
+                       href="${pageContext.request.contextPath}/pages/message/addMessage.jsp">新增</a>
                 </li>
                 <li class="float-right">
                     <input type="text" placeholder="请输入学号" id="student_id" class="input border-gray"
                            style="width:250px; line-height:17px;display:inline-block"/>
-                    <a id="search" class="button border-main icon-search ring-hover" > 搜索</a>
-                    <%--<button class="bg-green-light button-group-justified">搜索</button>--%>
+                    <a id="search" class="button border-main icon-search ring-hover"> 搜索</a>
                 </li>
             </ul>
         </div>
@@ -59,36 +64,34 @@
 <!--  表格显示内容 -->
 <table class="table table-hover text-center">
     <tr>
-        <th width="10%">编号</th>
-        <th width="10%">学号</th>
-        <th width="10%">姓名</th>
-        <th width="10%">书名</th>
-        <th width="10%">书籍编号</th>
-        <th width="10%">价格</th>
-        <th width="10%">是否支付</th>
-        <th width="10%">支付时间</th>
+        <th width="5%">ID</th>
+        <th width="5%">学号</th>
+        <th width="5%">姓名</th>
+        <th width="5%">时间</th>
+        <th width="10%">联系电话</th>
+        <th width="40%">留言信息</th>
+        <th width="10%">是否解决</th>
         <th width="20">操作</th>
     </tr>
     <div class="button-group">
         <!--  修改  -->
-        <c:forEach items="${pageInfo.list}" var="amerce">
+        <c:forEach items="${pageInfo.list}" var="message">
             <tr>
 
-                <td>${amerce.amerce_id}</td>
-                <td>${amerce.student_id}</td>
-                <td>${amerce.name}</td>
-                <td>${amerce.book_name}</td>
-                <td>${amerce.book_Num}</td>
-                <td>${amerce.money}</td>
-                <td class='<c:if test="${amerce.is_pay==0}"> alert-red</c:if>'>${amerce.is_payStr}</td>
-                <td>${amerce.pay_timeStr}</td>
+                <td>${message.id}</td>
+                <td>${message.student_id}</td>
+                <td>${message.student_name}</td>
+                <td>${message.timeStr}</td>
+                <td>${message.phoneNumber}</td>
+                <td>${message.message}</td>
+                <td class='<c:if test="${message.is_del==0}"> alert-red</c:if>'>${message.is_delStr}</td>
                 <td class="text-center">
                     <a class="button border-main  "
-                       href="${pageContext.request.contextPath}/amerce/modifyBook.do?bookId=${amerce.amerce_id}">
+                       href="${pageContext.request.contextPath}/message/modifyMessage.do?bookId=${message.id}">
                         <span class="icon-edit"></span> 修改
                     </a>
                     <a class="button border-red margin-large-left "
-                       onclick="deleteConfirm('${amerce.amerce_id}')">
+                       onclick="deleteConfirm('${message.id}')">
                         <span class="icon-trash-o"></span> 删除
                     </a>
                 </td>
@@ -117,10 +120,10 @@
     <div class="box-tools float-right margin-big">
         <ul class="pagination">
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled bg-inverse" </c:if>>
-                <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=1&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=1&size=${pageInfo.pageSize}"
                    aria-label="Previous">首页</a></li>
             <li <c:if test="${pageInfo.pageNum==1}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
+                <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=${pageInfo.pageNum-1}&size=${pageInfo.pageSize}">上一页</a>
             </li>
 
             <c:choose>
@@ -134,7 +137,7 @@
                             <%--显示当前选中的页数--%>
                                 <c:if test="${pageInfo.pageNum == pageNum}">class="active" </c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
@@ -147,18 +150,18 @@
                             var="pageNum">
                         <li
                             <%--显示当前选中的页数--%>
-                                <c:if test="${pageInfo.pageNum == pageNum}">class="bg-blue" s</c:if>
+                                <c:if test="${pageInfo.pageNum == pageNum}">class="bg-blue" </c:if>
                         >
-                            <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
+                            <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=${pageNum}&size=${pageInfo.pageSize}">${pageNum}</a>
                         </li>
                     </c:forEach>
                 </c:when>
             </c:choose>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
+                <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=${pageInfo.pageNum+1}&size=${pageInfo.pageSize}">下一页</a>
             </li>
             <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled" </c:if>>
-                <a href="${pageContext.request.contextPath}/amerce/findAll.do?page=${pageInfo.pages}&size=${pageInfo.pageSize}"
+                <a href="${pageContext.request.contextPath}/message/findByS_id.do?id=<%=head%>&page=${pageInfo.pages}&size=${pageInfo.pageSize}"
                    aria-label="Next">尾页</a></li>
         </ul>
     </div>
@@ -174,8 +177,8 @@
             var student_id = $("#student_id").val();
             if (student_id == "") {
                 window.alert("请输入搜索信息");
-            } else {
-                window.location.href = "${pageContext.request.contextPath }/amerce/findByS_id.do?student_id=" + student_id + "&page=1&size=10";
+            } else {// window.alert(bookName);
+                window.location.href = "${pageContext.request.contextPath }/book/findByName.do?bookName=" + student_id + "&page=1&size=10";
             }
         });
     });
@@ -184,10 +187,11 @@
     function deleteConfirm(id) {
         if (confirm("确认删除吗？")) {
             // alert(bookId);
-            window.location.href = "${pageContext.request.contextPath}/amerce/deleteAmerce.do?id=" + id;
+            window.location.href = "${pageContext.request.contextPath}/message/deleteMessage.do?id=" + id;
             window.reload();
             window.alert("删除成功");
         }
     }
+
 </script>
 </html>

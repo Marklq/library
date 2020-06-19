@@ -24,4 +24,22 @@ public class IAmerceServiceImpl implements IAmerceService {
         PageHelper.startPage(page,size);
         return amerceDao.findAll();
     }
+
+    @Override
+    public void addAmerce(Amerce amerce) {
+        amerceDao.addAmerce(amerce);
+    }
+
+    @Override
+    public List<Amerce> findByS_id(String student_id, Integer page, Integer size) {
+
+        PageHelper.startPage(page,size);
+        return amerceDao.findByS_id(student_id);
+
+    }
+
+    @Override
+    public void deleteAmerce(String id) {
+        amerceDao.deleteAmerce(id);
+    }
 }

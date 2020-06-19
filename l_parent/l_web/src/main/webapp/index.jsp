@@ -44,6 +44,8 @@
         <a class="button button-little bg-red-light" href="login.html"><span class="icon-power-off"></span>退出登录</a>
     </div>
 </div>
+
+<%--左导航--%>
 <div class="leftnav">
     <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
     <h2><span class="icon-book"></span>书 籍 管 理</h2>
@@ -113,7 +115,7 @@
             </a>
         </li>
         <li>
-            <a href="pages/amerce/addReader.jsp" target="right">
+            <a href="pages/amerce/addAmerce.jsp" target="right">
                 <span class="icon-caret-right"></span>添加记录
             </a>
         </li>
@@ -126,8 +128,8 @@
             </a>
         </li>
         <li>
-            <a href="pages/amerce/addReader.jsp" target="right">
-                <span class="icon-caret-right"></span>添加记录
+            <a href="${pageContext.request.contextPath}/pages/message/addMessage.jsp" target="right">
+                <span class="icon-caret-right"></span>添加留言
             </a>
         </li>
     </ul>

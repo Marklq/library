@@ -1,5 +1,9 @@
 package com.dd.domain;
 
+import com.dd.utils.TimeUtils;
+
+import java.util.Date;
+
 public class Amerce {
 
     private Integer amerce_id;
@@ -11,6 +15,32 @@ public class Amerce {
     private String book_Num;
     private Double money;
 
+    private String pay_timeStr;
+    private Date pay_time;
+
+    public Date getPay_time() {
+        return pay_time;
+    }
+
+    public void setPay_time(Date pay_time) {
+        this.pay_time = pay_time;
+    }
+
+    public String getPay_timeStr() {
+
+        if (pay_time == null) {
+            pay_timeStr = "尚未支付";
+        } else {
+            TimeUtils timeUtils = new TimeUtils();
+            pay_timeStr = timeUtils.DateToString(pay_time);
+        }
+
+        return pay_timeStr;
+    }
+
+    public void setPay_timeStr(String pay_timeStr) {
+        this.pay_timeStr = pay_timeStr;
+    }
 
     public Integer getAmerce_id() {
         return amerce_id;
